@@ -11,29 +11,6 @@ export class LoadingService {
 
   constructor(private dialog: MatDialog) { }
 
-  /**
-   * @deprecated This method is deprecated, use LoadingDialog() instead
-   */
-  // Mi primer deprecated :D
-  startLoadingDialog(): void {
-    if (!this.dialogRef) {
-      this.dialogRef = this.dialog.open(LoadingDialog, {
-        hasBackdrop: true,
-        disableClose: true,
-        enterAnimationDuration: '20ms',
-      })
-    }
-  }
-
-  /**
-   * @deprecated This method is deprecated, use LoadingDialog() instead
-   */
-  stopLoadingDialog(): void {
-    if (this.dialogRef) {
-      this.dialogRef.close();
-    }
-  }
-
   LoadingDialog(stopEmitter: EventEmitter<any>): void
   {
     let ref = this.dialog.open(LoadingDialog, {
